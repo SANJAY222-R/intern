@@ -38,30 +38,30 @@ export default function Careers() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-[#0A0A0A] text-white">
+    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-white text-gray-800">
       {/* Header */}
       <section className="container mx-auto px-6 max-w-4xl text-center mb-24">
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">Build the Future of Enterprise AI</h1>
-        <p className="text-xl text-neutral-400">Join an elite team of engineers deploying vendor-neutral AI infrastructure into the world's most critical industries.</p>
+        <p className="text-xl text-gray-600">Join an elite team of engineers deploying vendor-neutral AI infrastructure into the world's most critical industries.</p>
       </section>
 
       {/* Culture Section */}
       <section className="container mx-auto px-6 max-w-6xl mb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <AnimatedCard className="bg-[#111111] border-neutral-800">
+          <AnimatedCard className="bg-[#F9FAFB] border border-gray-300">
             <Zap className="w-8 h-8 text-neutral-500 mb-6" />
             <h3 className="text-xl font-heading font-semibold mb-3">High Velocity</h3>
-            <p className="text-neutral-400 text-sm leading-relaxed font-sans">We ship working code to production in weeks, not months. We don't do red tape, we do engineering.</p>
+            <p className="text-gray-600 text-sm leading-relaxed font-sans">We ship working code to production in weeks, not months. We don't do red tape, we do engineering.</p>
           </AnimatedCard>
-          <AnimatedCard className="bg-[#111111] border-neutral-800">
+          <AnimatedCard className="bg-[#F9FAFB] border border-gray-300">
             <Code className="w-8 h-8 text-neutral-500 mb-6" />
             <h3 className="text-xl font-heading font-semibold mb-3">Elite Peers</h3>
-            <p className="text-neutral-400 text-sm leading-relaxed font-sans">Work alongside the top 1% of distributed systems and ML engineers. We value high talent density.</p>
+            <p className="text-gray-600 text-sm leading-relaxed font-sans">Work alongside the top 1% of distributed systems and ML engineers. We value high talent density.</p>
           </AnimatedCard>
-          <AnimatedCard className="bg-[#111111] border-neutral-800">
+          <AnimatedCard className="bg-[#F9FAFB] border-neutral-800">
             <MapPin className="w-8 h-8 text-neutral-500 mb-6" />
             <h3 className="text-xl font-heading font-semibold mb-3">Remote-First</h3>
-            <p className="text-neutral-400 text-sm leading-relaxed font-sans">Work from anywhere in the world. We care about the systems you build, not the desk you sit at.</p>
+            <p className="text-gray-600 text-sm leading-relaxed font-sans">Work from anywhere in the world. We care about the systems you build, not the desk you sit at.</p>
           </AnimatedCard>
         </div>
       </section>
@@ -80,22 +80,22 @@ export default function Careers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 rounded bg-[#111111] border border-neutral-800 hover:border-purple-500/50 transition-all group relative overflow-hidden"
+              className="p-8 rounded bg-[#F9FAFB] border border-gray-300 hover:border-purple-500/50 transition-all group relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-2xl font-heading font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">{pos.title}</h3>
+                  <h3 className="text-2xl font-heading font-bold text-gray-800 mb-2 group-hover:text-purple-400 transition-colors">{pos.title}</h3>
                   <div className="flex flex-wrap gap-3 mt-4 font-mono">
-                    <span className="px-2 py-1 bg-[#0A0A0A] border border-neutral-800 rounded text-xs text-neutral-400 font-medium">[{pos.department}]</span>
-                    <span className="px-2 py-1 bg-[#0A0A0A] border border-neutral-800 rounded text-xs text-neutral-400 font-medium">{pos.location}</span>
-                    <span className="px-2 py-1 bg-[#0A0A0A] border border-neutral-800 rounded text-xs text-neutral-400 font-medium">{pos.type}</span>
+                    <span className="px-2 py-1 bg-[#0A0A0A] border border-gray-300 rounded text-xs text-gray-600 font-medium">[{pos.department}]</span>
+                    <span className="px-2 py-1 bg-[#0A0A0A] border border-gray-300 rounded text-xs text-gray-600 font-medium">{pos.location}</span>
+                    <span className="px-2 py-1 bg-[#0A0A0A] border border-gray-300 rounded text-xs text-gray-600 font-medium">{pos.type}</span>
                   </div>
-                  <p className="text-neutral-400 text-sm mt-4 max-w-2xl font-sans">{pos.desc}</p>
+                  <p className="text-gray-600 text-sm mt-4 max-w-2xl font-sans">{pos.desc}</p>
                 </div>
                 
-                <Link href="/contact" className="px-6 py-3 bg-white text-black font-sans font-bold rounded hover:bg-gray-200 transition-colors text-center shrink-0">
+                <Link href="/contact" className="px-6 py-3 bg-white text-black font-bold rounded hover:bg-gray-200 transition-colors text-center shrink-0">
                   Apply Now
                 </Link>
               </div>

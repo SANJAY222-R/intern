@@ -38,10 +38,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${geistSans.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${geistSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#0A0A0A] text-white overflow-x-hidden selection:bg-purple-500/30" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans bg-white text-gray-900 overflow-x-hidden selection:bg-blue-200" suppressHydrationWarning>
         <LenisProvider>
           <Navbar />
           {children}

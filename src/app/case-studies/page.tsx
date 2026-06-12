@@ -55,7 +55,7 @@ export default function CaseStudies() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-[#0A0A0A] text-white">
+    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-white text-gray-800">
       {/* Header */}
       <section className="container mx-auto px-6 max-w-7xl text-center mb-24">
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">Proven Outcomes</h1>
@@ -76,8 +76,8 @@ export default function CaseStudies() {
             {/* Case Study Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-neutral-800">
               <div className="flex items-center gap-4">
-                <div className="p-4 rounded bg-[#111111] border border-neutral-800">
-                  <study.icon className="w-8 h-8 text-neutral-500" />
+                <div className="p-4 rounded bg-[#F9FAFB] border border-gray-300">
+                  <study.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <div>
                   <h4 className="text-sm uppercase font-mono tracking-widest text-purple-400 font-bold mb-1">[{study.client}]</h4>
@@ -90,12 +90,12 @@ export default function CaseStudies() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 space-y-8">
                 <div>
-                  <h3 className="text-xl font-heading font-semibold mb-3 text-white">The Challenge</h3>
-                  <p className="text-neutral-400 leading-relaxed font-sans">{study.challenge}</p>
+                  <h3 className="text-xl font-heading font-semibold mb-3 text-gray-900">The Challenge</h3>
+                  <p className="text-gray-600 leading-relaxed font-sans">{study.challenge}</p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-heading font-semibold mb-3 text-white">The Results</h3>
-                  <p className="text-neutral-400 leading-relaxed font-sans">{study.results}</p>
+                  <h3 className="text-xl font-heading font-semibold mb-3 text-gray-900">The Results</h3>
+                  <p className="text-gray-600 leading-relaxed font-sans">{study.results}</p>
                 </div>
                 <div className="p-6 bg-[#050505] border border-neutral-800 rounded border-l-4 border-l-teal-500 font-mono">
                   <h3 className="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-3">System Architecture</h3>
@@ -116,11 +116,11 @@ export default function CaseStudies() {
                   </div>
                 </AnimatedCard>
                 
-                <AnimatedCard className="bg-[#111111] border-neutral-800 p-6">
+                <AnimatedCard className="bg-[#F9FAFB] rounded-3xl shadow-md p-6">
                   <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold mb-4">Technical Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {study.stack.map(tech => (
-                      <span key={tech} className="px-2 py-1 bg-[#0A0A0A] border border-neutral-800 rounded text-xs text-neutral-300 font-mono">
+                      <span key={tech} className="px-2 py-1 bg-[#F9FAFB] border border-gray-300 rounded text-xs text-gray-600 font-mono">
                         {tech}
                       </span>
                     ))}
@@ -134,7 +134,7 @@ export default function CaseStudies() {
 
       {/* CTA */}
       <section className="container mx-auto px-6 max-w-4xl text-center mt-32">
-        <Link href="/contact" className="inline-flex items-center gap-2 text-white hover:text-teal-400 transition-colors group text-lg font-mono font-medium">
+        <Link href="/contact" className="inline-flex items-center gap-2 text-blue-600 hover:text-gray-900 transition-colors group text-lg font-mono font-medium">
           Ready to achieve similar results? Book a strategy call <ArrowRight className="group-hover:translate-x-1 transition-transform" />
         </Link>
       </section>

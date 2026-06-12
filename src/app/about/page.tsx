@@ -13,7 +13,7 @@ export default function About() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-[#0A0A0A] text-white">
+    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-white text-gray-800">
       {/* Header */}
       <section className="container mx-auto px-6 max-w-4xl text-center mb-24">
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">Built for the Enterprise</h1>
@@ -23,7 +23,7 @@ export default function About() {
       {/* Mission & Vision */}
       <section className="container mx-auto px-6 max-w-6xl mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <AnimatedCard className="bg-[#111111] p-12">
+          <AnimatedCard className="bg-[#F9FAFB] rounded-3xl shadow-lg p-12">
             <h2 className="text-sm font-mono uppercase tracking-widest text-purple-400 font-bold mb-4">Our Mission</h2>
             <p className="text-2xl font-heading font-semibold text-white leading-relaxed">
               To deploy elite, cross-disciplinary Forward Deployed Engineers directly into enterprise teams to design, implement, and run custom AI systems that drive immediate business outcomes, free from vendor lock-in.
@@ -39,10 +39,10 @@ export default function About() {
       </section>
 
       {/* The Neutrality Manifesto */}
-      <section className="py-24 bg-[#050505] border-y border-neutral-900 mb-32">
+      <section className="py-24 bg-[#F5F5F5] border-y border-gray-200 mb-32">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl font-heading font-bold mb-8 text-center">Why Vendor Neutrality Matters</h2>
-          <div className="font-mono text-sm leading-relaxed text-neutral-300 bg-[#0A0A0A] border border-neutral-800 p-8 rounded-lg shadow-2xl">
+          <div className="font-mono text-sm leading-relaxed text-gray-600 bg-[#F9FAFB] border border-gray-300 p-8 rounded-lg shadow">
             <p className="mb-6">
               <span className="text-purple-400"># The AI landscape is moving too fast for single-vendor monopolies.</span><br />
               If your systems integrator is exclusively pushing Microsoft Azure or Google Cloud, they are optimizing for their reseller margins—not your product.
@@ -61,14 +61,14 @@ export default function About() {
       {/* Core Values */}
       <section className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Our Engineering Values</h2>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-gray-900">Our Engineering Values</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((val, i) => (
-            <AnimatedCard key={i} delay={i * 0.1}>
-              <val.icon className="w-8 h-8 text-neutral-500 mb-6" />
-              <h3 className="text-lg font-heading font-semibold mb-3 text-white">{val.title}</h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">{val.desc}</p>
+            <AnimatedCard key={i} delay={i * 0.1} className="bg-[#F9FAFB] rounded-3xl shadow-md">
+              <val.icon className="w-8 h-8 text-blue-500 mb-6" />
+              <h3 className="text-lg font-heading font-semibold mb-3 text-gray-900">{val.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{val.desc}</p>
             </AnimatedCard>
           ))}
         </div>

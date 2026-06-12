@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col pt-32 pb-24 relative overflow-hidden bg-[#0A0A0A] text-white">
+    <main className="flex min-h-screen flex-col pt-32 pb-24 relative overflow-hidden bg-white text-gray-800">
       <section className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
@@ -76,7 +76,7 @@ export default function Contact() {
 
           {/* Right Column: Form */}
           <div className="relative">
-            <AnimatedCard className="bg-[#0A0A0A] border border-neutral-800 p-8 md:p-10 font-mono">
+            <AnimatedCard className="bg-[#F9FAFB] rounded-3xl shadow-md p-8 md:p-10 font-mono">
               {isSuccess ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -97,7 +97,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Full Name</label>
                       <input
                         {...register("name")}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-purple-500 transition-colors"
+                        className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors"
                         placeholder="John Doe"
                       />
                       {errors.name && <span className="text-red-400 text-xs">{errors.name.message}</span>}
@@ -106,7 +106,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Enterprise Email</label>
                       <input
                         {...register("email")}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-purple-500 transition-colors"
+                        className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors"
                         placeholder="john@enterprise.com"
                       />
                       {errors.email && <span className="text-red-400 text-xs">{errors.email.message}</span>}
@@ -118,7 +118,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Company Name</label>
                       <input
                         {...register("company")}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-purple-500 transition-colors"
+                        className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors"
                         placeholder="Acme Corp"
                       />
                       {errors.company && <span className="text-red-400 text-xs">{errors.company.message}</span>}
@@ -127,7 +127,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Your Role</label>
                       <input
                         {...register("role")}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-purple-500 transition-colors"
+                        className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors"
                         placeholder="e.g. CTO, Head of AI"
                       />
                       {errors.role && <span className="text-red-400 text-xs">{errors.role.message}</span>}
@@ -139,7 +139,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Estimated Budget</label>
                       <select
                         {...register("budget")}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-neutral-300 text-sm focus:outline-none focus:border-purple-500 transition-colors appearance-none"
+                        className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors appearance-none"
                       >
                         <option value="">Select Budget</option>
                         <option value="50k-100k">$50k - $100k (Prototyping)</option>
@@ -153,7 +153,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Project Timeline</label>
                       <select
                         {...register("timeline")}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-neutral-300 text-sm focus:outline-none focus:border-purple-500 transition-colors appearance-none"
+                        className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors appearance-none"
                       >
                         <option value="">Select Timeline</option>
                         <option value="immediate">Immediate (Within 30 days)</option>
@@ -170,7 +170,7 @@ export default function Contact() {
                     <textarea
                       {...register("description")}
                       rows={4}
-                      className="w-full bg-[#111111] border border-neutral-800 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                      className="w-full bg-[#F9FAFB] border border-gray-300 rounded px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-[#007AFF] transition-colors resize-none"
                       placeholder="Please describe your current architecture, bottlenecks, and what you aim to achieve with Nexus FDEs."
                     />
                     {errors.description && <span className="text-red-400 text-xs">{errors.description.message}</span>}
@@ -179,7 +179,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex justify-center items-center gap-2 px-8 py-4 bg-white text-black font-sans font-bold rounded hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    className="w-full flex justify-center items-center gap-2 px-8 py-4 bg-[#007AFF] text-white font-sans font-bold rounded hover:bg-[#005FCC] transition-colors disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span className="animate-pulse">Executing...</span>

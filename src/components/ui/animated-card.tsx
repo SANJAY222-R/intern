@@ -18,8 +18,8 @@ export function AnimatedCard({ children, className, delay = 0 }: AnimatedCardPro
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay }}
       className={cn(
-        "relative rounded-lg bg-[#0A0A0A] border border-neutral-800 p-6 overflow-hidden",
-        "hover:border-purple-500/50 transition-colors duration-300",
+        "relative bg-white rounded-3xl p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden",
+        "hover:scale-[1.02] transition-transform duration-300 ease-out",
         className
       )}
     >

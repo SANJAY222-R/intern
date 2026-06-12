@@ -7,7 +7,7 @@ export default function BlogIndex() {
   const posts = getAllPosts();
 
   return (
-    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-[#0A0A0A] text-white">
+    <main className="flex min-h-screen flex-col pt-32 pb-24 bg-white text-gray-800">
       {/* Header */}
       <section className="container mx-auto px-6 max-w-4xl text-center mb-24">
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">Engineering Journal</h1>

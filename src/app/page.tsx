@@ -2,241 +2,199 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Server, Database, Activity, Lock, Cpu, GitMerge, Terminal, Code2 } from "lucide-react";
+import { ArrowRight, MessageSquare, Search, Zap, Shield, FileText, Calendar, CheckCircle2 } from "lucide-react";
 import { AnimatedCard } from "@/components/ui/animated-card";
 
-const HeroTerminal = () => (
-  <div className="rounded-lg bg-[#0A0A0A] border border-neutral-800 overflow-hidden shadow-2xl shadow-purple-900/10">
-    <div className="flex items-center px-4 py-3 border-b border-neutral-800 bg-[#111111]">
-      <div className="flex gap-2">
-        <div className="w-3 h-3 rounded-full bg-red-500" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500" />
-        <div className="w-3 h-3 rounded-full bg-green-500" />
+const FloatingWidgets = () => (
+  <div className="relative w-full h-[600px] flex items-center justify-center">
+    {/* Soft pastel gradient background blob */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-blue-100 via-purple-100 to-teal-50 rounded-full blur-3xl opacity-70" />
+    
+    {/* Main Widget Card */}
+    <motion.div 
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+      className="relative z-10 w-[380px] bg-white rounded-[2.5rem] p-6 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100"
+    >
+      <div className="flex items-center gap-4 mb-6 pb-4 border-b border-gray-50">
+        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+          <MessageSquare className="w-6 h-6 text-blue-600" />
+        </div>
+        <div>
+          <h3 className="font-semibold text-gray-900">Meeting Summary</h3>
+          <p className="text-sm text-gray-500">Q3 Planning with Design Team</p>
+        </div>
       </div>
-      <div className="mx-auto text-xs font-mono text-neutral-500">bash — 80x24</div>
-    </div>
-    <div className="p-4 font-mono text-sm leading-relaxed text-neutral-300">
-      <div className="flex gap-2">
-        <span className="text-purple-400">~/project</span>
-        <span className="text-neutral-500">$</span>
-        <span className="text-white">git push nexus main</span>
+      <div className="space-y-4">
+        <div className="h-4 bg-gray-100 rounded-full w-3/4" />
+        <div className="h-4 bg-gray-100 rounded-full w-full" />
+        <div className="h-4 bg-gray-100 rounded-full w-5/6" />
+        <div className="h-4 bg-gray-100 rounded-full w-4/5" />
       </div>
-      <div className="text-neutral-500 mt-2">Enumerating objects: 5, done.</div>
-      <div className="text-neutral-500">Counting objects: 100% (5/5), done.</div>
-      <div className="text-neutral-500">Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.</div>
-      <div className="mt-2 text-teal-400">remote: Deploying to production...</div>
-      <div className="text-teal-400">remote: Building application... [OK]</div>
-      <div className="text-teal-400">remote: Starting services... [OK]</div>
-      <div className="mt-2 text-green-400 font-bold">✓ Deployment successful</div>
-      <div className="text-neutral-400 mt-1">https://app.nexusfde.com/deployed</div>
-      <div className="flex gap-2 mt-4">
-        <span className="text-purple-400">~/project</span>
-        <span className="text-neutral-500">$</span>
-        <span className="animate-pulse">_</span>
+      <div className="mt-8 bg-gray-50 rounded-2xl p-4">
+        <p className="text-sm font-medium text-gray-700 mb-2">Action Items</p>
+        <div className="flex items-center gap-2 mb-2">
+          <CheckCircle2 className="w-4 h-4 text-green-500" />
+          <span className="text-sm text-gray-600">Finalize UI mockups</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-gray-300" />
+          <span className="text-sm text-gray-600">Review user feedback</span>
+        </div>
       </div>
-    </div>
+    </motion.div>
+
+    {/* Floating Pill Badges */}
+    <motion.div 
+      initial={{ y: 20, opacity: 0, x: -20 }}
+      animate={{ y: 0, opacity: 1, x: 0 }}
+      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+      className="absolute top-1/4 -left-12 z-20 bg-white rounded-full px-5 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex items-center gap-3"
+    >
+      <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">Z</div>
+      <span className="font-semibold text-gray-800 text-sm">Zoom Sync</span>
+    </motion.div>
+
+    <motion.div 
+      initial={{ y: 20, opacity: 0, x: 20 }}
+      animate={{ y: 0, opacity: 1, x: 0 }}
+      transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+      className="absolute bottom-1/4 -right-8 z-20 bg-white rounded-full px-5 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex items-center gap-3"
+    >
+      <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">M</div>
+      <span className="font-semibold text-gray-800 text-sm">Google Meet</span>
+    </motion.div>
   </div>
 );
 
-const FullStackPreview = () => (
-  <div className="border border-neutral-800 rounded-lg overflow-hidden bg-[#0A0A0A] font-mono text-sm">
-    <div className="grid grid-cols-4 border-b border-neutral-800 bg-[#111111] text-neutral-400 p-3">
-      <div className="col-span-1">SERVICE</div>
-      <div className="col-span-1">STATUS</div>
-      <div className="col-span-1">REGION</div>
-      <div className="col-span-1">METRICS</div>
+const AvatarCluster = () => (
+  <div className="flex items-center gap-4 mt-8">
+    <div className="flex -space-x-3">
+      {[1, 2, 3, 4].map((i) => (
+        <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 shadow-sm flex items-center justify-center overflow-hidden relative">
+          <img src={`https://i.pravatar.cc/100?img=${i * 10}`} alt="User" className="w-full h-full object-cover" />
+        </div>
+      ))}
     </div>
-    {[
-      { name: "api-gateway", status: "[ OK ]", region: "us-east", mem: "128MB" },
-      { name: "auth-worker", status: "[ OK ]", region: "global", mem: "64MB" },
-      { name: "vector-db", status: "SYNCING", region: "eu-west", mem: "2.4GB" },
-      { name: "llm-router", status: "[ OK ]", region: "us-east", mem: "512MB" },
-    ].map((srv, i) => (
-      <div key={i} className="grid grid-cols-4 border-b border-neutral-800/50 p-4 items-center hover:bg-[#111111] transition-colors">
-        <div className="col-span-1 text-white">{srv.name}</div>
-        <div className={`col-span-1 ${srv.status === '[ OK ]' ? 'text-green-500' : 'text-yellow-500'}`}>{srv.status}</div>
-        <div className="col-span-1 text-neutral-500">{srv.region}</div>
-        <div className="col-span-1 text-purple-400">{srv.mem}</div>
+    <div className="flex flex-col">
+      <div className="flex gap-1 text-yellow-400 text-sm">
+        ★★★★★
       </div>
-    ))}
-    <div className="p-4 flex justify-between items-center bg-[#050505] border-t border-neutral-800 text-xs text-neutral-500">
-      <div>System Health: 99.9%</div>
-      <div>Last checked: just now</div>
+      <span className="text-xs font-medium text-gray-500">Loved by 10,000+ teams</span>
     </div>
   </div>
 );
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col pt-24 bg-[#0A0A0A] text-white selection:bg-purple-500/30">
+    <main className="flex min-h-screen flex-col pt-24 bg-white text-gray-900 selection:bg-blue-200 selection:text-blue-900">
       {/* HERO SECTION */}
-      <section className="relative min-h-[85vh] flex items-center px-6 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10 pointer-events-none" />
-        
+      <section className="relative min-h-[85vh] flex items-center px-6 overflow-hidden bg-white">
         <div className="container mx-auto max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <motion.h1 
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-[1.1] mb-6"
+              className="text-5xl md:text-[4rem] font-bold tracking-tight leading-[1.05] mb-6 text-gray-900"
             >
-              Deploy apps and agents with <span className="glow-text">zero ops.</span>
+              Your AI notetaker is now also your <span className="text-blue-600">Conversational Knowledge Engine.</span>
             </motion.h1>
 
             <motion.p 
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-neutral-400 font-sans max-w-xl mb-10"
+              className="text-xl text-gray-500 font-sans max-w-xl mb-10 leading-relaxed"
             >
-              The unified platform for deploying fully-managed infrastructure, AI models, and vector databases without touching a cloud console.
+              Automatically record, transcribe, and extract actionable insights from all your meetings. Search across every conversation instantly.
             </motion.p>
 
             <motion.div 
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="/contact" className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors text-center inline-flex items-center justify-center gap-2">
-                Deploy Now <ArrowRight size={18} />
+              <Link href="/contact" className="px-8 py-3.5 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-sm text-center text-[15px]">
+                Get Started for Free
               </Link>
-              <Link href="/docs" className="px-6 py-3 bg-transparent border border-neutral-800 text-neutral-300 font-medium rounded hover:bg-neutral-900 transition-colors text-center">
-                Read the Docs
+              <Link href="/contact" className="px-8 py-3.5 bg-white border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-colors text-center text-[15px]">
+                Schedule Demo
               </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <AvatarCluster />
             </motion.div>
           </div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full"
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="w-full flex justify-center lg:justify-end"
           >
-            <HeroTerminal />
+            <FloatingWidgets />
           </motion.div>
         </div>
       </section>
 
-      {/* CLICK CLICK DONE SECTION */}
-      <section className="py-24 border-y border-neutral-900 bg-[#050505]">
+      {/* CLICK CLICK DONE SECTION -> NOW FEATURES */}
+      <section className="py-24 bg-gray-50/50">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Click, click, done.</h2>
-            <p className="text-neutral-400 text-lg max-w-2xl">From code to production in seconds. We handle the provisioning, scaling, and security.</p>
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900">Seamless intelligence.</h2>
+            <p className="text-gray-500 text-lg">Connect your calendar and let the AI do the heavy lifting. We capture every detail so you can focus on the conversation.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="w-8 h-8 rounded flex items-center justify-center bg-purple-900/30 text-purple-400 font-mono text-sm border border-purple-500/20">1</span>
-                <h3 className="text-xl font-heading font-semibold">Select a service</h3>
-              </div>
-              <div className="p-4 border border-neutral-800 rounded-lg bg-[#0A0A0A] font-mono text-sm text-neutral-300">
-                <div className="flex items-center gap-2 mb-3 pb-3 border-b border-neutral-800/50">
-                  <Server size={16} className="text-neutral-500" />
-                  <span>Web Service</span>
+            {[
+              { icon: Calendar, color: "bg-blue-100 text-blue-600", title: "Auto-join meetings", desc: "Connect Google Calendar or Outlook and we'll automatically join and record your calls." },
+              { icon: Search, color: "bg-purple-100 text-purple-600", title: "Universal search", desc: "Find any decision, quote, or metric from past meetings in seconds with semantic search." },
+              { icon: Zap, color: "bg-yellow-100 text-yellow-600", title: "Instant summaries", desc: "Get beautifully formatted summaries and action items the moment your meeting ends." }
+            ].map((feature, i) => (
+              <AnimatedCard key={i} delay={i * 0.1}>
+                <div className={`w-14 h-14 rounded-2xl ${feature.color} flex items-center justify-center mb-6`}>
+                  <feature.icon className="w-7 h-7" />
                 </div>
-                <div className="flex items-center gap-2 mb-3 pb-3 border-b border-neutral-800/50">
-                  <Database size={16} className="text-neutral-500" />
-                  <span>Vector DB</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Terminal size={16} className="text-neutral-500" />
-                  <span>Background Worker</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="w-8 h-8 rounded flex items-center justify-center bg-purple-900/30 text-purple-400 font-mono text-sm border border-purple-500/20">2</span>
-                <h3 className="text-xl font-heading font-semibold">Deploy your code</h3>
-              </div>
-              <div className="p-4 border border-neutral-800 rounded-lg bg-[#0A0A0A] font-mono text-sm">
-                <div className="flex gap-2">
-                  <span className="text-neutral-500">$</span>
-                  <span className="text-white">nexus deploy</span>
-                </div>
-                <div className="text-neutral-500 mt-2">→ Analyzing codebase</div>
-                <div className="text-neutral-500">→ Generating Dockerfile</div>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="w-8 h-8 rounded flex items-center justify-center bg-purple-900/30 text-purple-400 font-mono text-sm border border-purple-500/20">3</span>
-                <h3 className="text-xl font-heading font-semibold">We do the rest</h3>
-              </div>
-              <div className="p-4 border border-neutral-800 rounded-lg bg-[#0A0A0A] font-mono text-sm">
-                <div className="text-teal-400">INFO Provisioning node...</div>
-                <div className="text-teal-400">INFO Routing traffic...</div>
-                <div className="text-green-500 mt-2 font-bold">READY Available at:</div>
-                <div className="text-neutral-400">https://api.nexusfde.com</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FULL STACK PREVIEW SECTION */}
-      <section className="py-24 bg-[#0A0A0A]">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Vendor-Neutral AI Architecture</h2>
-              <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
-                We decouple your proprietary data from model providers using a robust vector engine and intelligent routing layer. Deploy local models or connect to public APIs securely.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Secure private VPC deployments",
-                  "SOC2 Type II compliant infrastructure",
-                  "Zero egress fees on internal routing"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-neutral-300 font-mono text-sm">
-                    <span className="text-green-500">[✓]</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <FullStackPreview />
-            </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                <p className="text-gray-500 leading-relaxed">{feature.desc}</p>
+              </AnimatedCard>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SERVICES GRID SECTION */}
-      <section className="py-24 border-y border-neutral-900 bg-[#050505]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Enterprise Capabilities</h2>
-              <p className="text-neutral-400 text-lg">Infrastructure built for scale, reliability, and security.</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900">Enterprise capabilities, consumer simplicity.</h2>
+              <p className="text-gray-500 text-lg">Built on robust infrastructure, designed for humans.</p>
             </div>
-            <Link href="/services" className="mt-6 md:mt-0 text-white hover:text-purple-400 flex items-center gap-2 transition-colors font-mono text-sm">
-              View All <ArrowRight size={16} />
+            <Link href="/services" className="mt-6 md:mt-0 text-blue-600 hover:text-blue-700 flex items-center gap-2 transition-colors font-medium text-[15px]">
+              View all features <ArrowRight size={18} />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Forward Deployed Eng", icon: Terminal, desc: "Elite engineers embedded in your team." },
-              { title: "AI Agent Development", icon: GitMerge, desc: "Autonomous task execution." },
-              { title: "Enterprise RAG", icon: Database, desc: "Secure document retrieval." },
-              { title: "AI Infrastructure", icon: Cpu, desc: "Bare metal or managed cloud." },
-              { title: "MLOps & Fine-Tuning", icon: Code2, desc: "Custom model training." },
-              { title: "Governance & Guardrails", icon: Lock, desc: "Strict data compliance." },
+              { title: "Smart Transcription", icon: MessageSquare, color: "text-blue-500", desc: "Speaker attribution and high accuracy across 50+ languages." },
+              { title: "Action Item Extraction", icon: CheckCircle2, color: "text-green-500", desc: "Automatically sync tasks to Jira, Asana, or Linear." },
+              { title: "Custom Knowledge Base", icon: FileText, color: "text-purple-500", desc: "Train the AI on your specific company terminology." },
+              { title: "Enterprise Security", icon: Shield, color: "text-gray-700", desc: "SOC2 Type II, GDPR compliant, and end-to-end encrypted." },
             ].map((service, i) => (
               <AnimatedCard key={i} delay={i * 0.1}>
-                <service.icon className="w-6 h-6 text-neutral-500 mb-6" />
-                <h3 className="text-lg font-heading font-semibold mb-2 text-white">{service.title}</h3>
-                <p className="text-sm text-neutral-400 mb-4">{service.desc}</p>
+                <service.icon className={`w-8 h-8 ${service.color} mb-6`} />
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
+                <p className="text-[15px] text-gray-500">{service.desc}</p>
               </AnimatedCard>
             ))}
           </div>
@@ -244,14 +202,16 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 bg-[#0A0A0A] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-900/10 blur-[120px] pointer-events-none" />
+      <section className="py-32 bg-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-100 rounded-full blur-[120px] pointer-events-none opacity-50" />
         <div className="container mx-auto px-6 max-w-3xl text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Ready to Deploy?</h2>
-          <p className="text-lg text-neutral-400 mb-10">Start building secure, vendor-neutral AI systems that drive measurable ROI.</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors">
-            Get Started <ArrowRight size={18} />
-          </Link>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900">Ready to transform your meetings?</h2>
+          <p className="text-lg text-gray-500 mb-10">Join thousands of teams who are already saving hours every week.</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-sm">
+              Start for free <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
     </main>
