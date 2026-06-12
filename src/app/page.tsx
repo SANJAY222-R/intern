@@ -90,7 +90,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col pt-24 bg-white text-gray-900 selection:bg-blue-200 selection:text-blue-900">
       {/* HERO SECTION */}
-      <section className="relative min-h-[85vh] flex items-center px-6 overflow-hidden bg-white">
+      <section className="relative min-h-[85vh] flex items-center px-6 overflow-hidden bg-white scroll-mt-[80px]">
         <div className="container mx-auto max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
             <motion.h1 
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* CLICK CLICK DONE SECTION -> NOW FEATURES */}
-      <section className="py-24 bg-gray-50/50">
+      <section className="py-24 bg-gray-50/50 scroll-mt-[80px]">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900">Seamless intelligence.</h2>
@@ -163,7 +163,7 @@ export default function Home() {
                 <div className={`w-14 h-14 rounded-2xl ${feature.color} flex items-center justify-center mb-6`}>
                   <feature.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{feature.desc}</p>
               </AnimatedCard>
             ))}
@@ -171,8 +171,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES GRID SECTION */}
-      <section className="py-24 bg-white">
+      <section id="services" className="py-24 bg-white scroll-mt-[80px]">
+      
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div className="max-w-2xl">
@@ -193,7 +193,7 @@ export default function Home() {
             ].map((service, i) => (
               <AnimatedCard key={i} delay={i * 0.1}>
                 <service.icon className={`w-8 h-8 ${service.color} mb-6`} />
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-white">{service.title}</h3>
                 <p className="text-[15px] text-gray-500">{service.desc}</p>
               </AnimatedCard>
             ))}
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 bg-gray-50 relative overflow-hidden">
+      <section className="py-32 bg-gray-50 relative overflow-hidden scroll-mt-[80px]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-100 rounded-full blur-[120px] pointer-events-none opacity-50" />
         <div className="container mx-auto px-6 max-w-3xl text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900">Ready to transform your meetings?</h2>

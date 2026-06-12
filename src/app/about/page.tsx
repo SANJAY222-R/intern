@@ -23,13 +23,13 @@ export default function About() {
       {/* Mission & Vision */}
       <section className="container mx-auto px-6 max-w-6xl mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <AnimatedCard className="bg-[#F9FAFB] rounded-3xl shadow-lg p-12">
+          <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-12">
             <h2 className="text-sm font-mono uppercase tracking-widest text-purple-400 font-bold mb-4">Our Mission</h2>
             <p className="text-2xl font-heading font-semibold text-white leading-relaxed">
               To deploy elite, cross-disciplinary Forward Deployed Engineers directly into enterprise teams to design, implement, and run custom AI systems that drive immediate business outcomes, free from vendor lock-in.
             </p>
           </AnimatedCard>
-          <AnimatedCard className="bg-[#111111] p-12">
+          <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-12">
             <h2 className="text-sm font-mono uppercase tracking-widest text-teal-400 font-bold mb-4">Our Vision</h2>
             <p className="text-2xl font-heading font-semibold text-white leading-relaxed">
               To be the world’s premier engineering partner for vendor-neutral enterprise AI adoption, unlocking the full potential of artificial intelligence safely and rapidly within every organization.
@@ -61,13 +61,13 @@ export default function About() {
       {/* Core Values */}
       <section className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-gray-900">Our Engineering Values</h2>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-white">Our Engineering Values</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((val, i) => (
-            <AnimatedCard key={i} delay={i * 0.1} className="bg-[#F9FAFB] rounded-3xl shadow-md">
+            <AnimatedCard key={i} delay={i * 0.1} className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-8">
               <val.icon className="w-8 h-8 text-blue-500 mb-6" />
-              <h3 className="text-lg font-heading font-semibold mb-3 text-gray-900">{val.title}</h3>
+              <h3 className="text-lg font-heading font-semibold mb-3 text-white">{val.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{val.desc}</p>
             </AnimatedCard>
           ))}

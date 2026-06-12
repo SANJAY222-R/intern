@@ -76,7 +76,7 @@ export default function CaseStudies() {
             {/* Case Study Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-neutral-800">
               <div className="flex items-center gap-4">
-                <div className="p-4 rounded bg-[#F9FAFB] border border-gray-300">
+                <div className="p-4 rounded bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md">
                   <study.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <div>
@@ -90,7 +90,7 @@ export default function CaseStudies() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 space-y-8">
                 <div>
-                  <h3 className="text-xl font-heading font-semibold mb-3 text-gray-900">The Challenge</h3>
+                  <h3 className="text-xl font-heading font-semibold mb-3 text-white">The Challenge</h3>
                   <p className="text-gray-600 leading-relaxed font-sans">{study.challenge}</p>
                 </div>
                 <div>
@@ -104,7 +104,7 @@ export default function CaseStudies() {
               </div>
 
               <div className="space-y-6">
-                <AnimatedCard className="bg-[#111111] border-neutral-800 p-6">
+                <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-6">
                   <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold mb-4">ROI Metrics</h3>
                   <div className="space-y-6">
                     {study.roi.map((metric, idx) => (
@@ -116,11 +116,11 @@ export default function CaseStudies() {
                   </div>
                 </AnimatedCard>
                 
-                <AnimatedCard className="bg-[#F9FAFB] rounded-3xl shadow-md p-6">
+                <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-6">
                   <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold mb-4">Technical Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {study.stack.map(tech => (
-                      <span key={tech} className="px-2 py-1 bg-[#F9FAFB] border border-gray-300 rounded text-xs text-gray-600 font-mono">
+                      <span key={tech} className="px-2 py-1 bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md text-gray-400 font-mono">
                         {tech}
                       </span>
                     ))}

@@ -80,14 +80,14 @@ export default function Services() {
             className="scroll-mt-32"
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="p-4 bg-[#111111] border border-neutral-800 rounded">
+              <div className="p-4 bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md">
                 <service.icon className="w-8 h-8 text-neutral-500" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold">{service.title}</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">{service.title}</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <AnimatedCard className="bg-[#111111] h-full border-neutral-800">
+              <AnimatedCard className="bg-[#2f2f2f] h-full border border-white/5 rounded-3xl shadow-md">
                 <h3 className="text-sm font-mono uppercase tracking-widest text-purple-400 font-bold mb-2">The Problem</h3>
                 <p className="text-neutral-300 mb-8 leading-relaxed font-sans">{service.problem}</p>
                 
@@ -95,7 +95,7 @@ export default function Services() {
                 <p className="text-neutral-300 leading-relaxed font-sans">{service.solution}</p>
               </AnimatedCard>
 
-              <AnimatedCard className="bg-[#050505] h-full border-neutral-800 font-mono">
+              <AnimatedCard className="bg-[#2f2f2f] h-full border border-white/5 rounded-3xl shadow-md font-mono">
                 <h3 className="text-lg font-heading font-semibold mb-6 text-white font-sans">Engagement Details</h3>
                 
                 <div className="mb-6">
@@ -127,7 +127,7 @@ export default function Services() {
 
       {/* CTA */}
       <section className="container mx-auto px-6 max-w-4xl text-center mt-32">
-        <div className="p-12 rounded bg-[#111111] border border-neutral-800 relative overflow-hidden">
+        <div className="p-12 rounded bg-[#2f2f2f] border border-white/5 shadow-md relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-teal-500" />
           <h2 className="text-3xl font-heading font-bold mb-6">Need a Custom Engagement?</h2>
           <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Speak directly with an Enterprise AI Architect to discuss your infrastructure, security requirements, and engineering bottlenecks.</p>

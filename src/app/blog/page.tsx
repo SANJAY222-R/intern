@@ -19,8 +19,8 @@ export default function BlogIndex() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, i) => (
             <Link href={`/blog/${post.slug}`} key={post.slug}>
-              <AnimatedCard delay={i * 0.05} className="h-full flex flex-col justify-between group bg-[#111111] border-neutral-800">
-                <div>
+              <AnimatedCard delay={i * 0.05} className="h-full flex flex-col justify-between group bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-4">
+                  <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs uppercase tracking-widest text-purple-400 font-bold bg-purple-900/30 border border-purple-500/20 px-3 py-1 rounded font-mono">
                       {post.category}

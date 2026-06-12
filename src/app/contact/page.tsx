@@ -76,7 +76,7 @@ export default function Contact() {
 
           {/* Right Column: Form */}
           <div className="relative">
-            <AnimatedCard className="bg-[#F9FAFB] rounded-3xl shadow-md p-8 md:p-10 font-mono">
+            <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-8 md:p-10 font-mono">
               {isSuccess ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}

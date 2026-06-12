@@ -48,21 +48,21 @@ export default function Careers() {
       {/* Culture Section */}
       <section className="container mx-auto px-6 max-w-6xl mb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <AnimatedCard className="bg-[#F9FAFB] border border-gray-300">
-            <Zap className="w-8 h-8 text-neutral-500 mb-6" />
-            <h3 className="text-xl font-heading font-semibold mb-3">High Velocity</h3>
-            <p className="text-gray-600 text-sm leading-relaxed font-sans">We ship working code to production in weeks, not months. We don't do red tape, we do engineering.</p>
-          </AnimatedCard>
-          <AnimatedCard className="bg-[#F9FAFB] border border-gray-300">
-            <Code className="w-8 h-8 text-neutral-500 mb-6" />
-            <h3 className="text-xl font-heading font-semibold mb-3">Elite Peers</h3>
-            <p className="text-gray-600 text-sm leading-relaxed font-sans">Work alongside the top 1% of distributed systems and ML engineers. We value high talent density.</p>
-          </AnimatedCard>
-          <AnimatedCard className="bg-[#F9FAFB] border-neutral-800">
-            <MapPin className="w-8 h-8 text-neutral-500 mb-6" />
-            <h3 className="text-xl font-heading font-semibold mb-3">Remote-First</h3>
-            <p className="text-gray-600 text-sm leading-relaxed font-sans">Work from anywhere in the world. We care about the systems you build, not the desk you sit at.</p>
-          </AnimatedCard>
+          <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-8">
+                <Zap className="w-8 h-8 text-white mb-6" />
+                <h3 className="text-xl font-heading font-semibold mb-3 text-white">High Velocity</h3>
+                <p className="text-gray-300 text-sm leading-relaxed font-sans">We ship working code to production in weeks, not months. We don't do red tape, we do engineering.</p>
+              </AnimatedCard>
+              <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-8">
+                <Code className="w-8 h-8 text-white mb-6" />
+                <h3 className="text-xl font-heading font-semibold mb-3 text-white">Elite Peers</h3>
+                <p className="text-gray-300 text-sm leading-relaxed font-sans">Work alongside the top 1% of distributed systems and ML engineers. We value high talent density.</p>
+              </AnimatedCard>
+              <AnimatedCard className="bg-[#2f2f2f] border border-white/5 rounded-3xl shadow-md p-8">
+                <MapPin className="w-8 h-8 text-white mb-6" />
+                <h3 className="text-xl font-heading font-semibold mb-3 text-white">Remote-First</h3>
+                <p className="text-gray-300 text-sm leading-relaxed font-sans">Work from anywhere in the world. We care about the systems you build, not the desk you sit at.</p>
+              </AnimatedCard>
         </div>
       </section>
 
@@ -86,7 +86,7 @@ export default function Careers() {
               
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-2xl font-heading font-bold text-gray-800 mb-2 group-hover:text-purple-400 transition-colors">{pos.title}</h3>
+                  <h3 className="text-2xl font-heading font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">{pos.title}</h3>
                   <div className="flex flex-wrap gap-3 mt-4 font-mono">
                     <span className="px-2 py-1 bg-[#0A0A0A] border border-gray-300 rounded text-xs text-gray-600 font-medium">[{pos.department}]</span>
                     <span className="px-2 py-1 bg-[#0A0A0A] border border-gray-300 rounded text-xs text-gray-600 font-medium">{pos.location}</span>
