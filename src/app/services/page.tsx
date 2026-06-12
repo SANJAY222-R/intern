@@ -129,7 +129,9 @@ export default function Services() {
       <section className="container mx-auto px-6 max-w-4xl text-center mt-32">
         <div className="p-12 rounded bg-[#2f2f2f] border border-white/5 shadow-md relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-teal-500" />
-          <h2 className="text-3xl font-heading font-bold mb-6">Need a Custom Engagement?</h2>
+          <h2 className="text-3xl font-heading font-bold mb-6 !text-white">
+  Need a Custom Engagement?
+</h2>
           <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Speak directly with an Enterprise AI Architect to discuss your infrastructure, security requirements, and engineering bottlenecks.</p>
           <Link href="/contact" className="inline-flex px-8 py-4 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors">
             Schedule a Technical Discovery
