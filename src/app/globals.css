@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Custom Color Palette from Master Prompt */
+  --color-primary: #FFFFFF;
+  --color-secondary: #D1D5DB;
+  --color-background-dark: #0A0A0A;
+  --color-surface: #171717;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #A1A1AA;
+  
+  --color-accent-purple: #9333EA;
+  --color-accent-purple-dark: #581C87;
+  --color-accent-green: #10B981;
+  --color-accent-teal: #2DD4BF;
+
+  /* Map to standard Tailwind vars */
+  --color-background: var(--color-background-dark);
+  --color-foreground: var(--color-text-main);
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-geist {
+  font-family: var(--font-geist);
+}
+
+@utility font-mono {
+  font-family: var(--font-mono);
+}
+
+@layer base {
+  :root {
+    --background: #0A0A0A;
+    --foreground: #FFFFFF;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  
+  code, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Animations */
+@layer utilities {
+  .glow-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-teal-400;
+  }
+}
